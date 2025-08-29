@@ -11,8 +11,8 @@ export interface Product {
   stock?: number;
   rating?: number;
   reviewCount?: number;
-  createdAt?: string;
-  updatedAt?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export interface ProductsQueryParams {

@@ -1,84 +1,74 @@
-import { Product, ProductsQueryParams, ProductsResponse } from '../../shared/types';
-import productsData from './data/products.json';
+import { Product } from '../../shared/types';
+import ProductModel from './models/Product';
 
-// Cargar productos desde el JSON
-const products: Product[] = productsData as Product[];
+export const getProducts = async (params: any) => {
+  const {
+    search,
+    sort = 'price',
+    order = 'asc',
+    page = 1,
+    limit = 10,
+    available,
+    category
+  } = params;
 
-// Función para obtener productos con filtros
-export const getProducts = async (params: ProductsQueryParams): Promise<ProductsResponse> => {
-  let filteredProducts = [...products];
+  const query: any = {};
 
-  // Filtrar por búsqueda
-  if (params.search) {
-    const searchTerm = params.search.toLowerCase();
-    filteredProducts = filteredProducts.filter(product =>
-      product.name.toLowerCase().includes(searchTerm) ||
-      product.description?.toLowerCase().includes(searchTerm) ||
-      product.category.toLowerCase().includes(searchTerm)
-    );
+  if (search) {
+    query.$or = [
+      { name: { $regex: search, $options: 'i' } },
+      { description: { $regex: search, $options: 'i' } },
+      { category: { $regex: search, $options: 'i' } }
+    ];
   }
 
-  // Filtrar por disponibilidad
-  if (params.available !== undefined) {
-    filteredProducts = filteredProducts.filter(product => 
-      product.isAvailable === params.available
-    );
+  if (available !== undefined) {
+    query.isAvailable = available;
   }
 
-  // Filtrar por categoría
-  if (params.category) {
-    filteredProducts = filteredProducts.filter(product =>
-      product.category.toLowerCase() === params.category?.toLowerCase()
-    );
+  if (category) {
+    query.category = { $regex: category, $options: 'i' };
   }
 
-  // Ordenar
-  if (params.sort) {
-    const order = params.order || 'asc';
-    filteredProducts.sort((a, b) => {
-      let aValue: any = a[params.sort!];
-      let bValue: any = b[params.sort!];
+  const sortOrder = order === 'desc' ? -1 : 1;
+  const sortOptions: any = { [sort]: sortOrder };
 
-      if (typeof aValue === 'string') {
-        aValue = aValue.toLowerCase();
-        bValue = bValue.toLowerCase();
-      }
+  const skip = (page - 1) * limit;
 
-      if (aValue < bValue) return order === 'asc' ? -1 : 1;
-      if (aValue > bValue) return order === 'asc' ? 1 : -1;
-      return 0;
-    });
-  }
+  const [products, total] = await Promise.all([
+    ProductModel.find(query)
+      .sort(sortOptions)
+      .skip(skip)
+      .limit(limit)
+      .lean() 
+      .exec(),
+    ProductModel.countDocuments(query)
+  ]);
 
-  // Paginación
-  const page = params.page || 1;
-  const limit = params.limit || 10;
-  const startIndex = (page - 1) * limit;
-  const endIndex = startIndex + limit;
-
-  const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
-  const totalPages = Math.ceil(filteredProducts.length / limit);
+  const totalPages = Math.ceil(total / limit);
 
   return {
-    products: paginatedProducts,
-    total: filteredProducts.length,
+    products: products as Product[], 
+    total,
     page,
     limit,
     totalPages,
-    hasNext: endIndex < filteredProducts.length,
-    hasPrev: startIndex > 0
+    hasNext: page < totalPages,
+    hasPrev: page > 1
   };
 };
-
-// Función para obtener un producto por ID
-export const getProductById = async (id: string): Promise<Product | undefined> => {
-  return products.find(product => product.id === id);
+ 
+export const getProductById = async (id: string): Promise<Product | null> => {
+  const product = await ProductModel.findById(id).lean().exec();
+  return product as Product | null;
 };
 
-// Función para obtener los productos más baratos disponibles
 export const getTopCheapestAvailable = async (top: number = 3): Promise<Product[]> => {
-  return products
-    .filter(product => product.isAvailable)
-    .sort((a, b) => a.price - b.price)
-    .slice(0, top);
+  const products = await ProductModel.find({ isAvailable: true })
+    .sort({ price: 1 })
+    .limit(top)
+    .lean() 
+    .exec();
+  
+  return products as Product[];
 };
