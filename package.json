@@ -1,0 +1,19 @@
+{
+  "name": "vibes-marketplace",
+  "version": "1.0.0",
+  "description": "Mini-marketplace para prueba técnica de VIBES",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "cd api && npm run dev",
+    "dev:web": "cd web && npm run dev",
+    "build": "cd api && npm run build && cd ../web && npm run build",
+    "install:all": "npm install && cd api && npm install && cd ../web && npm install",
+    "test": "echo \"No tests specified\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": ["monorepo", "express", "nextjs", "typescript"],
+  "author": "Tu nombre",
+  "license": "MIT"
+}

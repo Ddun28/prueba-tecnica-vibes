@@ -1,0 +1,10 @@
+[
+  { "id": "p1", "name": "Guantes GN102", "price": 59.9, "isAvailable": true, "category": "gloves", "image": "/img/gn102.jpg", "description": "Guantes de protección de alta calidad" },
+  { "id": "p2", "name": "Casco CS433", "price": 79.9, "isAvailable": false, "category": "headgear", "image": "/img/cs433.jpg", "description": "Casco de seguridad industrial" },
+  { "id": "p3", "name": "Bolsa AC990", "price": 24.5, "isAvailable": true, "category": "bag", "image": "/img/ac990.jpg", "description": "Bolsa resistente para herramientas" },
+  { "id": "p4", "name": "Chaleco Reflectante", "price": 34.9, "isAvailable": true, "category": "clothing", "image": "/img/reflectante.jpg", "description": "Chaleco de seguridad reflectante" },
+  { "id": "p5", "name": "Gafas de Protección", "price": 19.9, "isAvailable": true, "category": "eyewear", "image": "/img/gafas.jpg", "description": "Gafas de protección anti-impacto" },
+  { "id": "p6", "name": "Botas de Seguridad", "price": 89.9, "isAvailable": false, "category": "footwear", "image": "/img/botas.jpg", "description": "Botas con punta de acero" },
+  { "id": "p7", "name": "Arnés de Seguridad", "price": 129.9, "isAvailable": true, "category": "safety", "image": "/img/arnes.jpg", "description": "Arnés para trabajos en altura" },
+  { "id": "p8", "name": "Tapones Auditivos", "price": 9.9, "isAvailable": true, "category": "hearing", "image": "/img/tapones.jpg", "description": "Protectores auditivos desechables" }
+]
