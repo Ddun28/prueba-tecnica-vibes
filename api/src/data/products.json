@@ -1,10 +1,218 @@
 [
-  { "id": "p1", "name": "Guantes GN102", "price": 59.9, "isAvailable": true, "category": "gloves", "image": "/img/gn102.jpg", "description": "Guantes de protección de alta calidad" },
-  { "id": "p2", "name": "Casco CS433", "price": 79.9, "isAvailable": false, "category": "headgear", "image": "/img/cs433.jpg", "description": "Casco de seguridad industrial" },
-  { "id": "p3", "name": "Bolsa AC990", "price": 24.5, "isAvailable": true, "category": "bag", "image": "/img/ac990.jpg", "description": "Bolsa resistente para herramientas" },
-  { "id": "p4", "name": "Chaleco Reflectante", "price": 34.9, "isAvailable": true, "category": "clothing", "image": "/img/reflectante.jpg", "description": "Chaleco de seguridad reflectante" },
-  { "id": "p5", "name": "Gafas de Protección", "price": 19.9, "isAvailable": true, "category": "eyewear", "image": "/img/gafas.jpg", "description": "Gafas de protección anti-impacto" },
-  { "id": "p6", "name": "Botas de Seguridad", "price": 89.9, "isAvailable": false, "category": "footwear", "image": "/img/botas.jpg", "description": "Botas con punta de acero" },
-  { "id": "p7", "name": "Arnés de Seguridad", "price": 129.9, "isAvailable": true, "category": "safety", "image": "/img/arnes.jpg", "description": "Arnés para trabajos en altura" },
-  { "id": "p8", "name": "Tapones Auditivos", "price": 9.9, "isAvailable": true, "category": "hearing", "image": "/img/tapones.jpg", "description": "Protectores auditivos desechables" }
+  {
+    "id": "p1",
+    "name": "Guantes de Seguridad Industriales",
+    "price": 59.9,
+    "isAvailable": true,
+    "category": "gloves",
+    "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=300&fit=crop",
+    "description": "Guantes de protección de alta calidad para trabajo industrial resistentes a cortes"
+  },
+  {
+    "id": "p2",
+    "name": "Casco de Seguridad con Visor",
+    "price": 79.9,
+    "isAvailable": false,
+    "category": "headgear",
+    "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=300&fit=crop",
+    "description": "Casco de seguridad industrial con visor transparente y ajuste ergonómico"
+  },
+  {
+    "id": "p3",
+    "name": "Bolsa de Herramientas Profesional",
+    "price": 24.5,
+    "isAvailable": true,
+    "category": "bag",
+    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=300&fit=crop",
+    "description": "Bolsa resistente para herramientas con múltiples compartimentos y correa ajustable"
+  },
+  {
+    "id": "p4",
+    "name": "Chaleco Reflectante de Seguridad",
+    "price": 34.9,
+    "isAvailable": true,
+    "category": "clothing",
+    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=300&fit=crop",
+    "description": "Chaleco de seguridad reflectante para alta visibilidad en condiciones de poca luz"
+  },
+  {
+    "id": "p5",
+    "name": "Gafas de Protección Anti-impacto",
+    "price": 19.9,
+    "isAvailable": true,
+    "category": "eyewear",
+    "image": "https://images.unsplash.com/photo-1581338834647-b0fb40704e21?w=400&h=300&fit=crop",
+    "description": "Gafas de protección anti-impacto con protección UV y diseño ergonómico"
+  },
+  {
+    "id": "p6",
+    "name": "Botas de Seguridad con Punta de Acero",
+    "price": 89.9,
+    "isAvailable": false,
+    "category": "footwear",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop",
+    "description": "Botas con punta de acero, suela antideslizante y resistencia al agua"
+  },
+  {
+    "id": "p7",
+    "name": "Arnés de Seguridad para Altura",
+    "price": 129.9,
+    "isAvailable": true,
+    "category": "safety",
+    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=300&fit=crop",
+    "description": "Arnés profesional para trabajos en altura con certificación de seguridad"
+  },
+  {
+    "id": "p8",
+    "name": "Tapones Auditivos Desechables",
+    "price": 9.9,
+    "isAvailable": true,
+    "category": "hearing",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+    "description": "Protectores auditivos desechables para entornos ruidosos, cómodos y efectivos"
+  },
+  {
+    "id": "p9",
+    "name": "Mascarilla de Protección N95",
+    "price": 14.9,
+    "isAvailable": true,
+    "category": "safety",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+    "description": "Mascarilla de protección respiratoria N95 con filtro de alta eficiencia"
+  },
+  {
+    "id": "p10",
+    "name": "Cinturón Portaherramientas",
+    "price": 45.9,
+    "isAvailable": true,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=400&h=300&fit=crop",
+    "description": "Cinturón portaherramientas con múltiples bolsillos y soporte para peso"
+  },
+  {
+    "id": "p11",
+    "name": "Cable de Extensión Industrial 10m",
+    "price": 32.5,
+    "isAvailable": true,
+    "category": "electrical",
+    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=300&fit=crop",
+    "description": "Cable de extensión industrial de 10 metros con protección contra sobrecargas"
+  },
+  {
+    "id": "p12",
+    "name": "Martillo de Carpintero Profesional",
+    "price": 28.9,
+    "isAvailable": true,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+    "description": "Martillo profesional con mango de fibra de vidrio y cabeza balanceada"
+  },
+  {
+    "id": "p13",
+    "name": "Destornillador Set Profesional",
+    "price": 42.9,
+    "isAvailable": true,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+    "description": "Set de destornilladores profesionales con puntas intercambiables y mango antideslizante"
+  },
+  {
+    "id": "p14",
+    "name": "Llave Adjustable de Precisión",
+    "price": 37.5,
+    "isAvailable": true,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+    "description": "Llave adjustable de alta precisión para trabajos de mecánica fina"
+  },
+  {
+    "id": "p15",
+    "name": "Taladro Percutor Inalámbrico",
+    "price": 189.9,
+    "isAvailable": true,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+    "description": "Taladro percutor inalámbrico con batería de litio y alto torque"
+  },
+  {
+    "id": "p16",
+    "name": "Sierra Circular Profesional",
+    "price": 249.9,
+    "isAvailable": false,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=400&h=300&fit=crop",
+    "description": "Sierra circular profesional con láser guía y sistema de seguridad integrado"
+  },
+  {
+    "id": "p17",
+    "name": "Pulidora Angular 1200W",
+    "price": 159.9,
+    "isAvailable": true,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+    "description": "Pulidora angular de 1200W para trabajos de lijado y pulido profesionales"
+  },
+  {
+    "id": "p18",
+    "name": "Set de Llaves de Tubo",
+    "price": 67.8,
+    "isAvailable": true,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+    "description": "Set completo de llaves de tubo en medidas métricas y standard"
+  },
+  {
+    "id": "p19",
+    "name": "Alicates de Corte de Precisión",
+    "price": 23.9,
+    "isAvailable": true,
+    "category": "tools",
+    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=300&fit=crop",
+    "description": "Alicates de corte de precisión para trabajos electrónicos y delicados"
+  },
+  {
+    "id": "p20",
+    "name": "Escalera de Aluminio Extensible",
+    "price": 299.9,
+    "isAvailable": true,
+    "category": "equipment",
+    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop",
+    "description": "Escalera de aluminio extensible hasta 5 metros con sistema de seguridad"
+  },
+  {
+    "id": "p21",
+    "name": "Carretilla de Carga Industrial",
+    "price": 178.5,
+    "isAvailable": false,
+    "category": "equipment",
+    "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop",
+    "description": "Carretilla de carga industrial con capacidad para 200kg y ruedas neumáticas"
+  },
+  {
+    "id": "p22",
+    "name": "Generador de Energía 3000W",
+    "price": 489.9,
+    "isAvailable": true,
+    "category": "equipment",
+    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+    "description": "Generador de energía 3000W silencioso con arranque eléctrico"
+  },
+  {
+    "id": "p23",
+    "name": "Compresor de Aire Portátil",
+    "price": 219.9,
+    "isAvailable": true,
+    "category": "equipment",
+    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+    "description": "Compresor de aire portátil 50L para herramientas neumáticas"
+  },
+  {
+    "id": "p24",
+    "name": "Andamio Modular Profesional",
+    "price": 899.9,
+    "isAvailable": true,
+    "category": "equipment",
+    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=300&fit=crop",
+    "description": "Andamio modular profesional con sistema de seguridad integrado"
+  }
 ]
