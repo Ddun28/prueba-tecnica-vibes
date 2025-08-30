@@ -59,7 +59,7 @@ export const getProducts = async (params: any) => {
 };
  
 export const getProductById = async (id: string): Promise<Product | null> => {
-  const product = await ProductModel.findById(id).lean().exec();
+  const product = await ProductModel.findOne({ id }).lean().exec();
   return product as Product | null;
 };
 
